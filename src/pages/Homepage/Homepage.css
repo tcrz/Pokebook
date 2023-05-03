@@ -1,0 +1,14 @@
+.hero-bg{
+    
+}
+
+.hero img {
+    width: 67%;
+    height: 67%;
+    mix-blend-mode: overlay;
+}
+
+.hero p {
+    font-family: 'General Sans';
+    mix-blend-mode: overlay;
+}
