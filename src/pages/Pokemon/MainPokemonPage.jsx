@@ -31,7 +31,7 @@ const MainPokemonPage = () => {
             <section className="borderr border-red-400" style={{height: "78vh"}}>
                 <div className="pokemon-list grid grid-cols-4 gap-x-4 gap-y-4 px-20 py-10 h-full overflow-y-scroll">
                     {[...Array(10).keys()].map(i => (
-                        <article className="pokemon bgg-red-400 borderr-4 border-orange-500 flex flex-col items-center relative" style={{height: "280pxx"}}>
+                        <article className="pokemon bgg-red-400 borderr-4 border-orange-500 flex flex-col items-center relative" style={{height: "280px"}}>
                             {/* <div className="absolute border border-pink-950" style={{top: "0%", left:"1%"}}> */}
                                 <img className="absolute top-0" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"} style={{width: "75%", height: "75%", borrder: "1px solid red", top: "-5%"}}/>
                             {/* </div> */}
