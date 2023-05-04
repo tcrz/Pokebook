@@ -39,11 +39,6 @@ a:hover {
     letter-spacing: 0.00938em;
   }
 
-  #root {
-    margin: 0;
-    padding: 0
-  }
-
   h1 {
     font-size: 3em;
     font-weight: 600;
@@ -59,11 +54,10 @@ a:hover {
 @layer components {
   .input-field {
     border-radius: 60px !important;
-    border: .5em solid #E85382;
-    height: 35px;
+    height: 35px !important;
     width: 100%;
     /* border: 1px solid #999999; */
-    padding: 20px;
+    padding: 20px 5px;
     font-size: 0.9em !important;
     outline: none;
     background: white

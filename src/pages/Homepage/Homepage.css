@@ -2,6 +2,10 @@
     
 }
 
+.hero h1 {
+    mix-blend-mode: overlay;
+}
+
 .hero img {
     width: 67%;
     height: 67%;
@@ -10,5 +14,24 @@
 
 .hero p {
     font-family: 'General Sans';
+}
+
+.input-field.hero-input-field {
+    border-radius: 60px !important;
+    border: .5em solid #E85382;
+    height: 57px !important;
     mix-blend-mode: overlay;
+}
+
+.hero-input-field .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+    position: relative !important;
+}
+
+.hero-input-field .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+    width: 88%;
+}
+
+.hero-input-field .css-1laqsz7-MuiInputAdornment-root {
+    position: absolute;
+    right: 5px;
 }
