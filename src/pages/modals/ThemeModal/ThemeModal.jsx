@@ -19,7 +19,7 @@ const ThemeModal = ({ openModal, setModalOpen}) => {
         </div>
         <div className="theme-container bg-noiseBg h-full w-full borderr border-red-400 flex items-center justify-around" style={{height: "80%"}}>
           {
-            colors.map(color => (<div onClick={()=>handleSetTheme(color)} className={`theme ${color === theme ? "border rounded-full" : ""}  border-black cursor-pointer`} style={{borderColor: "#868686", padding: ".3em"}}>
+            colors.map(color => (<div onClick={()=>handleSetTheme(color)} className={`theme ${color === theme ? "border rounded-full border-black" : ""}   cursor-pointer`} style={{ padding: ".3em"}}>
               <div className="theme-circle rounded-full" style={{background: color}}>
                   &nbsp;
               </div>

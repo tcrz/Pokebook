@@ -30,33 +30,17 @@ nav.main-nav .theme-circle {
     width: 100px;
 }
 
-.pokemon {
-    /* background: white; */
-    border-radius: 20px;
-}
-
-.inner-card {
-    background: white;
-    border-radius: 20px;
-}
-
-.inner-card-bg{
-    background: #F1F1F1;
-    border-radius: 15px;
-}
-
 /* Pagination */
 .pagination {
     padding: 0 65px;
 }
 
 .css-wjh20t-MuiPagination-ul li button,
-.css-wjh20t-MuiPagination-ul li div{
+.css-wjh20t-MuiPagination-ul li div {
     font-family: "Clash display";
     border-radius: 8px;
     font-weight: 500;
     line-height: 30px;
-    
 }
 
 .css-wjh20t-MuiPagination-ul li button:hover {

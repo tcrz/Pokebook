@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import Homepage from './pages/Homepage/Homepage'
+import Homepage from './pages/homepage/Homepage'
 import { Outlet, Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
-import MainPokemonPage from './pages/Pokemon/MainPokemonPage'
+import MainPokemonPage from './pages/pokemonPage/MainPokemonPage'
 import { ThemeContext } from './themeContext/themeContext'
 
 function Root() {

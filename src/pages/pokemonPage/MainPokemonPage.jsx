@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import pokemonGroup from '../Homepage/pokemongrp.png'
+import pokemonGroup from '../homepage/pokemongrp.png'
 import "./MainPokemonPage.css"
 import { InputAdornment, MenuItem, OutlinedInput, Pagination, Select } from '@mui/material'
 import ThemeModal from '../modals/ThemeModal/ThemeModal';
 import { useNavigate } from 'react-router';
+import PokemonCard from './PokemonCard/PokemonCard';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -48,25 +49,7 @@ const MainPokemonPage = ({}) => {
             <section className="borderr-2 py-2 border-red-400" style={{height: "85vh", paddingTop: "4vh"}}>
                 <div className="pokemon-list grid grid-cols-4 gap-x-4 gap-y-4 px-20 pt-10 h-full overflow-y-scroll">
                     {[...Array(10).keys()].map(i => (
-                        <article className="pokemon bgg-red-400 borderr-4 border-orange-500 flex flex-col items-center relative" style={{height: "280px"}}>
-                            {/* <div className="absolute border border-pink-950" style={{top: "0%", left:"1%"}}> */}
-                                <img className="absolute top-0" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"} style={{width: "75%", height: "75%", borrder: "1px solid red", top: "-5%"}}/>
-                            {/* </div> */}
-                            <div className="inner-card border border-white w-full h-full p-2 flex flex-col gap-4" style={{marginTop: "20%"}}>
-                                <div className="inner-card-bg borderr border-black w-full flex flex-col items-center" style={{marginToop: "25%", height: "70%"}}>
-                                    {/* <p>Pokemon</p> */}
-
-                                    
-                                    
-                                </div>
-                                <div className="borderr border-blue-900 flex flex-col items-center">
-                                    <h2 className="text-xl font-medium">Charizard</h2>
-                                    {/* <div>
-                                        <p>skills</p>
-                                    </div> */}
-                                </div>
-                            </div>
-                        </article>
+                        <PokemonCard />
                     ))}
                 </div>
             </section>

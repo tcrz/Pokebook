@@ -1,0 +1,39 @@
+.pokemon {
+    /* background: white; */
+    border-radius: 20px;
+}
+
+.pokemon:hover .inner-card-container{
+    background: white
+}
+
+.inner-card-container {
+    border-radius: 20px;
+    background-color: transparent;
+}
+
+.view-btn-container {
+    display: none;
+}
+
+.view-btn {
+    display: hidden;
+    border-radius: 14px;
+    padding: 12px;
+    background: var(--app-color)
+}
+
+.pokemon:hover .view-btn-container {
+    display: flex;
+}
+
+
+.inner-card {
+    background: white;
+    border-radius: 20px;
+}
+
+.inner-card-bg{
+    background: #F1F1F1;
+    border-radius: 15px;
+}
