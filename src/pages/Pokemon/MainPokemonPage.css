@@ -4,21 +4,24 @@
     mix-blend-mode: normal;
 }
 
-nav {
-    box-shadow: 0px 14px 24px rgba(0, 0, 0, 0.05);
+nav.main-nav {
+    box-shadow: 0px 14px 24px rgba(0, 0, 0, 0.065);
     background: white;
+    position: absolute;
+    top:0;
+    z-index: 2;
 }
 
-nav h3, .logo img {
+nav.main-nav h3, .logo img {
     mix-blend-mode: normal;
 }
 
-nav .input-field {
+nav.main-nav .input-field {
     box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.05);
     /* height: 20px */
 }
 
-nav .theme-circle {
+nav.main-nav .theme-circle {
     padding: .3em .95em;
 }
 
@@ -40,4 +43,86 @@ nav .theme-circle {
 .inner-card-bg{
     background: #F1F1F1;
     border-radius: 15px;
+}
+
+/* Pagination */
+.pagination {
+    padding: 0 65px;
+}
+
+.css-wjh20t-MuiPagination-ul li button,
+.css-wjh20t-MuiPagination-ul li div{
+    font-family: "Clash display";
+    border-radius: 8px;
+    font-weight: 500;
+    line-height: 30px;
+    
+}
+
+.css-wjh20t-MuiPagination-ul li button:hover {
+    background-color: transparent;
+    border: 1px solid
+}
+
+button.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    background-color: var(--app-color);
+}
+button.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected:hover {
+    background-color: var(--app-color);
+}
+/* Select input */
+
+/* root container */
+.pagination .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+    background: #E1E1E1;
+    border-radius: 8px !important;
+    border: none;
+    padding: 0px !important;
+}
+
+/* value container */
+.pagination .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+    padding-left: 6px;
+}
+
+/* value */
+.pagination .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input > p{
+    background: white;
+    padding: 3px 12px;
+    border-radius: 4px;
+    font-family: "Clash display";
+    font-weight: 500;
+ }
+
+ /* Menu */
+
+/* menu items container */
+ .MuiPaper-root.MuiMenu-paper.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper {
+    border-radius: 8px;
+ }
+
+/* menu items list container */
+ ul.MuiList-root.MuiList-padding.MuiMenu-list.css-6hp17o-MuiList-root-MuiMenu-list {
+    padding: 4px;
+ }
+
+/* menu item container */
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected {
+    background-color: green;
+    border-radius: 6px;
+ }
+
+ .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected:hover {
+    background-color: #F3F3F3;
+}
+
+/* menu item */
+ ul.MuiList-root.MuiList-padding.MuiMenu-list.css-6hp17o-MuiList-root-MuiMenu-list li p{
+    width: 100%;
+    text-align: center;
+    font-family: "Clash display";
+ }
+
+ .MuiMenu-paper {
+    transition-duration: 0s !important;
 }
