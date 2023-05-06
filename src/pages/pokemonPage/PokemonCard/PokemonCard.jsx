@@ -1,8 +1,9 @@
 import React from 'react'
 import "./PokemonCard.css"
 import { FaEye } from "react-icons/fa";
+import pokemonTypes from '../pokemonTypes';
 
-const PokemonCard = ({name, image}) => {
+const PokemonCard = ({name, image, types}) => {
   return (
       <article className="pokemon bgg-red-400 borderr-4 border-orange-500 flex flex-col items-center relative" style={{height: "320px"}}>
         {/* <div className="absolute border border-pink-950" style={{top: "0%", left:"1%"}}> */}
@@ -16,8 +17,9 @@ const PokemonCard = ({name, image}) => {
                 <div className="borderr border-blue-900 flex flex-col gap-3 items-center" style={{height: "35%"}}>
                     <h2 className="text-xl font-medium">{name[0].toUpperCase() + name.slice(1)}</h2>
                     <div className="borderr flex justify-around items-center gap-5" style={{minWidth: "55%"}}>
-                        <p className="text-sm rounded-xl bg-gray-200 px-2" style={{background: "#EEEEEE"}}>Flying</p>
-                        <p className="text-sm rounded-xl bg-gray-200 px-2" style={{background: "#EEEEEE"}}>Fire</p>
+                        {
+                            types.map(type => <p className="text-sm rounded-xl bg-gray-200 px-2" style={{background: "#EEEEEE"}}>{pokemonTypes[type.type.name]}&nbsp;{type.type.name}</p>)
+                        }
                     </div>
                 </div>
             </div>

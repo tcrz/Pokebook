@@ -76,17 +76,18 @@ const pokemonQueries = useQueries({
         }
     })
 }, )
+
 // Check if all queries are loaded and succeessful
 const pokemonQueriesLoaded = pokemonQueries.every(query => !query.isLoading)
 console.log("pQueries:", pokemonQueriesLoaded)
 const pokemonQueriesIsSuccess = pokemonQueries.every(query => query.isSuccess)
 
 let pokemonDetailsDict = {}
-// If successful, retrieve pokemon details data only from each query and normalize it to a dictionary
+// If successful, retrieve pokemon details data only from each returned query and normalize it to a dictionary
 if (pokemonQueriesIsSuccess) {
     const pokemonDetailsList = []
     pokemonQueries.forEach(pokemon => pokemonDetailsList.push(pokemon.data))
-    // Normalize pokemon data
+    // Normalize pokemon data, setting name property as key
     const dataSchema = new schema.Entity('data', {}, { idAttribute: "name" })
     const dataListSchema = [dataSchema];
     const normalizedData = normalize(pokemonDetailsList, dataListSchema);
@@ -135,7 +136,13 @@ useEffect(() => {
                     <div className="pokemon-list grid grid-cols-4 gap-x-4 gap-y-4 px-20 pt-10 h-full overflow-y-scroll">
                     {pokemonList.map(pokemon => {
                         if (pokemonDetailsDict[pokemon.name]) {
-                            return <PokemonCard key={pokemon.name} name={pokemon.name} image={pokemonDetailsDict[pokemon.name].sprites.other.dream_world.front_default}/>
+                            return (
+                                <PokemonCard 
+                                key={pokemon.name} 
+                                name={pokemon.name} 
+                                image={pokemonDetailsDict[pokemon.name].sprites.other.dream_world.front_default}
+                                types={pokemonDetailsDict[pokemon.name].types}/>
+                            )
                         }
                     })}
                     </div>
