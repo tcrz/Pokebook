@@ -3,6 +3,7 @@ import { InputAdornment, OutlinedInput } from '@mui/material'
 import pokemonGroup from './pokemongrp.png'
 import "./Homepage.css"
 import { Link } from 'react-router-dom'
+import { AiOutlineSearch } from 'react-icons/ai';
 
 const Homepage = () => {
   return (
@@ -15,7 +16,7 @@ const Homepage = () => {
             </div>
             <div className="borderr text-center w-full">
               <OutlinedInput className="input-field hero-input-field mb-3" style={{width: "75%"}} type="text" placeholder="Enter pokemon name"
-              endAdornment={<InputAdornment position="end"><p className='text-sm text-white rounded-full' style={{padding: ".5em .8em", background:"var(--app-color)", boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.155)"}}>O</p></InputAdornment>} />
+              endAdornment={<InputAdornment position="end"><p className='text-sm text-white rounded-full' style={{padding: ".7em .8em", background:"var(--app-color)", boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.155)"}}><AiOutlineSearch /></p></InputAdornment>} />
               <p><Link to="/all" className="underline">View all</Link></p>
             </div>
             

@@ -10,6 +10,7 @@ import { useQuery, useQueries} from '@tanstack/react-query'
 import Loader from '../../Loader/Loader';
 import { normalize, schema } from "normalizr";
 import _ from 'lodash';
+import { AiOutlineSearch } from 'react-icons/ai';
 
 
 const MainPokemonPage = ({}) => {
@@ -118,7 +119,7 @@ useEffect(() => {
                 </div>
                 <div className="borderr" style={{width: "65%"}}>
                     <OutlinedInput className="bg-noiseBg input-field" style={{width: "100%"}} type="text" placeholder="Enter pokemon name"
-                    startAdornment={<InputAdornment position="start">O</InputAdornment>} />
+                    startAdornment={<InputAdornment position="start"><AiOutlineSearch /></InputAdornment>} />
                 </div>
             </div>
             <div onClick={()=>setThemeModalOpen(prev => !prev)} className="theme rounded-full border cursor-pointer" style={{borderColor: "#868686", padding: ".3em"}}>
