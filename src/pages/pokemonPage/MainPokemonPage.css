@@ -37,6 +37,7 @@ nav.main-nav .theme-circle {
 
 .css-wjh20t-MuiPagination-ul li button,
 .css-wjh20t-MuiPagination-ul li div {
+    transition-duration: 0s !important;
     font-family: "Clash display";
     border-radius: 8px;
     font-weight: 500;

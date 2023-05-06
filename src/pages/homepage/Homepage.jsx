@@ -11,7 +11,7 @@ const Homepage = () => {
             <div className="flex flex-col items-center borderr-2 border-red-500 mt-10" style={{textAlign: "center", width: "85%"}}>
                 <img src={pokemonGroup} alt="pokemon group" className="borrder border-orange-400"/>
                 <h1>Poké&nbsp;<span style={{color: "var(--app-color)"}}>book</span></h1>
-                <p style={{width: "70%"}}>Largest Pokémon index with information about every Pokemon you can think of. </p>
+                <p style={{width: "70%"}}>Largest Pokémon index with information about every Pokemon you can think of.</p>
             </div>
             <div className="borderr text-center w-full">
               <OutlinedInput className="input-field hero-input-field mb-3" style={{width: "75%"}} type="text" placeholder="Enter pokemon name"

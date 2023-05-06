@@ -4,6 +4,7 @@ import Homepage from './pages/homepage/Homepage'
 import { Outlet, Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import MainPokemonPage from './pages/pokemonPage/MainPokemonPage'
 import { ThemeContext } from './themeContext/themeContext'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 function Root() {
   return  (
@@ -12,6 +13,7 @@ function Root() {
 }
 
 function App() {
+  const qClient = new QueryClient();
   const [count, setCount] = useState(0)
   const [theme, setTheme] = useState("#E85382")
 
@@ -33,11 +35,11 @@ function App() {
     )
   )
   return (
-    <>
-    <ThemeContext.Provider value={themeValues}>
-      <RouterProvider router={router} />
-    </ThemeContext.Provider>
-    </>
+    <QueryClientProvider client={qClient}>
+      <ThemeContext.Provider value={themeValues}>
+        <RouterProvider router={router} />
+      </ThemeContext.Provider>
+    </QueryClientProvider>
   )
 }
 
