@@ -34,6 +34,8 @@ const MainPokemonPage = ({}) => {
     return response.data
   }
 
+  console.log(offset)
+
   // Fetch details of a pokemon
   const fetchPokemonDetails = async (id) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`
@@ -64,7 +66,7 @@ if (!isLoading && isSuccess){
 // Fetch details of all pokemon on current page
 console.log(offset + 1, limit + offset)
 const pokemonQueries = useQueries({
-    queries: _.range(offset + 1, limit + offset).map((id) => {
+    queries: _.range(offset + 1, limit + offset + 1).map((id) => {
         return {
             queryKey: ['pokemon', id],
             queryFn: () => fetchPokemonDetails(id),
