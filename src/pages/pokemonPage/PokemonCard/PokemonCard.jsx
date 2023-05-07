@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./PokemonCard.css"
 import { FaEye } from "react-icons/fa";
 import pokemonTypes from '../pokemonTypes';
+import DetailViewModal from '../../modals/DetailModal/DetailViewModal';
 
-const PokemonCard = ({name, image, types}) => {
+const PokemonCard = ({name, image, types, viewPokemonDetails}) => {
   return (
-      <article className="pokemon bgg-red-400 borderr-4 border-orange-500 flex flex-col items-center relative" style={{height: "320px"}}>
+      <article onClick={viewPokemonDetails} className="pokemon bgg-red-400 borderr-4 border-orange-500 flex flex-col items-center relative" style={{height: "320px"}}>
         {/* <div className="absolute border border-pink-950" style={{top: "0%", left:"1%"}}> */}
             <img className="absolute top-0" src={image} style={{width: "75%", height: "75%", borrder: "1px solid red", zIndex:1, top: "-5%" }}/>
         {/* </div> */}

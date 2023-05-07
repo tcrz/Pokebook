@@ -17,10 +17,12 @@ import DetailViewModal from '../modals/DetailModal/DetailViewModal';
 const MainPokemonPage = ({}) => {
   const navigate = useNavigate()
   const [themeModalOpen, setThemeModalOpen] = useState(false)
+  const [detailsModalOpen, setDetailsModalOpen] = useState(false)
   const [limit, setLimit] = useState(8)
   const [pageNum, setPageNum] = useState(1)
   const [offset, setOffset] = useState(0)
   const [pokemonDetails, setPokemonDetails] = useState({})
+  const [currentPokemon, setCurrentPokemon] = useState("")
 //   console.log(pokemonDetails)
 
   // Recalculate offset when pageNum or limit changes
@@ -34,6 +36,11 @@ const MainPokemonPage = ({}) => {
     console.log(url)
     const response = await axios.get(url)
     return response.data
+  }
+
+  const viewPokemonDetails = (name) => {
+    setCurrentPokemon(pokemonDetails[name])
+    setDetailsModalOpen(true)
   }
 
   console.log(offset)
@@ -108,7 +115,7 @@ useEffect(() => {
 
   return (
     <div className="pokemon-view bg-noiseBg h-screen borderr-2 border-black relative">
-        {/* <DetailViewModal /> */}
+        <DetailViewModal openModal={detailsModalOpen} setModalOpen={setDetailsModalOpen} pokemon={currentPokemon} />
         <ThemeModal openModal={themeModalOpen} setModalOpen={setThemeModalOpen} />
         <nav className="main-nav w-full bg-noiseBg flex items-center justify-between borderr-2 border-red-300 px-7 pt-0" style={{height: "9vh"}}>
             {/* Logo and searchbar */}
@@ -141,6 +148,7 @@ useEffect(() => {
                         if (pokemonDetailsDict[pokemon.name]) {
                             return (
                                 <PokemonCard 
+                                viewPokemonDetails={viewPokemonDetails.bind(null, pokemon.name)}
                                 key={pokemon.name} 
                                 name={pokemon.name} 
                                 image={pokemonDetailsDict[pokemon.name].sprites.other.dream_world.front_default}
