@@ -13,6 +13,16 @@ import _ from 'lodash';
 import { AiOutlineSearch } from 'react-icons/ai';
 import DetailViewModal from '../modals/DetailModal/DetailViewModal';
 
+const paginationStyles = {
+    '& .Mui-selected': {
+        backgroundColor:  "var(--app-color)",
+        color:'white',
+       },
+    '& .Mui-selected:hover': {
+        backgroundColor:  "var(--app-color)",
+    }
+}
+
 
 const MainPokemonPage = ({}) => {
   const navigate = useNavigate()
@@ -160,7 +170,7 @@ useEffect(() => {
                 }
             </section>
             <div className="pagination borderr-2 border-green-400 flex items-center justify-between" style={{height: "13vh"}}>
-                <Pagination count={10} page={pageNum} color="primary" onChange={handlePageChange} />
+                <Pagination count={10} sx={paginationStyles} page={pageNum} color="primary" onChange={handlePageChange} />
                 <div>
                 <Select
                 className="input-field"
