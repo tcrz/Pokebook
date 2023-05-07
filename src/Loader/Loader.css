@@ -9,7 +9,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .pokemon-logo {
-    animation: App-logo-spin infinite 1.2s linear;
+    animation: App-logo-spin infinite .95s linear;
   }
 }
 
