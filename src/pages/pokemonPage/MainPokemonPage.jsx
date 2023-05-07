@@ -11,6 +11,7 @@ import Loader from '../../Loader/Loader';
 import { normalize, schema } from "normalizr";
 import _ from 'lodash';
 import { AiOutlineSearch } from 'react-icons/ai';
+import DetailViewModal from '../modals/DetailModal/DetailViewModal';
 
 
 const MainPokemonPage = ({}) => {
@@ -107,6 +108,7 @@ useEffect(() => {
 
   return (
     <div className="pokemon-view bg-noiseBg h-screen borderr-2 border-black relative">
+        {/* <DetailViewModal /> */}
         <ThemeModal openModal={themeModalOpen} setModalOpen={setThemeModalOpen} />
         <nav className="main-nav w-full bg-noiseBg flex items-center justify-between borderr-2 border-red-300 px-7 pt-0" style={{height: "9vh"}}>
             {/* Logo and searchbar */}
