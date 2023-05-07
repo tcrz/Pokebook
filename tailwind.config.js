@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'noiseBg': "url('./src/pages/Homepage/homepageBg.png')"
+        'noiseBg': "url('./src/pages/homepage/homepageBg.png')"
       }
     },
   },
