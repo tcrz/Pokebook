@@ -15,3 +15,5 @@ export function getDominantColor(imageUrl, callback) {
       });
     }
   }
+
+export const noiseBg = "url('./src/pages/homepage/homepageBg.png')"
