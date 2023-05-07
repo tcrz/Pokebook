@@ -16,7 +16,11 @@ import { noiseBg } from '../../utils';
 
 const paginationStyles = {
     '& button': {
-        background: "red"
+        background: "#E1E1E1",
+        fontFamily: "Clash display",
+        borderRadius: "8px",
+        fontWeight: "500",
+        lineHeight: "30px",
     },
     '& .Mui-selected': {
         backgroundColor:  "var(--app-color)",

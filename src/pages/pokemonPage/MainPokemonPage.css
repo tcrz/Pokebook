@@ -35,7 +35,7 @@ nav.main-nav .theme-circle {
     padding: 0 65px;
 }
 
-.css-wjh20t-MuiPagination-ul li button,
+/* .css-wjh20t-MuiPagination-ul li button, */
 .css-wjh20t-MuiPagination-ul li div {
     transition-duration: 0s !important;
     font-family: "Clash display";
@@ -53,13 +53,13 @@ nav.main-nav .theme-circle {
     border: 1px solid
 }
 
-button.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+/* button.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
     background-color: var(--app-color);
 } 
 
 button.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected:hover {
     background-color: var(--app-color);
-}
+} */
 
 
 /* Select input */
