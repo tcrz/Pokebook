@@ -57,6 +57,15 @@ const selectMenuStyles = {
     // }
 }
 
+// Number of pages for pagination component
+const totalPages = 900
+let pageCount = 0
+if (totalPages % limit === 0) {
+    pageCount = totalPages / limit
+  } else {
+    pageCount =  Math.floor(totalPages / limit) + 1
+  }
+
   // Recalculate offset when pageNum or limit changes
   useEffect(()=> {
     setOffset(limit * (pageNum - 1))
@@ -192,7 +201,7 @@ useEffect(() => {
                 }
             </section>
             <div className="pagination borderr-2 border-green-400 flex items-center justify-between" style={{height: "13vh"}}>
-                <Pagination count={10} sx={paginationStyles} page={pageNum} color="primary" onChange={handlePageChange} />
+                <Pagination count={pageCount} sx={paginationStyles} page={pageNum} color="primary" onChange={handlePageChange} />
                 <div>
                 <Select
                 sx={selectMenuStyles}
