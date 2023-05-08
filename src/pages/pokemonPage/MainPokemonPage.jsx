@@ -45,7 +45,7 @@ const paginationStyles = {
         backgroundColor: `${theme}`,
         color:'white',
        },
-    '& .Mui-selected:hover': {
+    '& li button.Mui-selected:hover': {
         backgroundColor: `${theme}`,
     }
 }
