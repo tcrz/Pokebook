@@ -93,7 +93,7 @@ const DetailViewModal = ({ openModal, setModalOpen, pokemon}) => {
     className="modal-bg bg-noiseBg" 
     style={{display: openModal ? "flex": "none"}}
     >
-      { pokemon && <div onClick={(e)=>e.stopPropagation()} className="details-view-modal-box p-2 w-4/5 sm:w-2/5 sm:absolute sm:right-1 text-center">
+      { pokemon && <div onClick={(e)=>e.stopPropagation()} className="details-view-modal-box p-2 w-11/12 sm:w-2/5 sm:absolute sm:right-1 text-center">
         {/* pokemon image and background */}
         <div className="pokemon-img-container borderr border-black bg-reed-200 w-full relative" style={{height: "36%"}}>
           <div className="pokemon-img-bg borderr border-black bgg-yellow-200 " 
