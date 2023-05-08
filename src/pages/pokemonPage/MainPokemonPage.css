@@ -44,14 +44,17 @@ nav.main-nav .theme-circle {
     line-height: 30px;
 }
 
-.css-wjh20t-MuiPagination-ul li button {
-    background: #E1E1E1
+.pagination .Mui-selected {
+    background: var(--app-color)
 }
+/* .css-wjh20t-MuiPagination-ul li button {
+    background: #E1E1E1
+} */
 
-.css-wjh20t-MuiPagination-ul li button:hover {
+/* .css-wjh20t-MuiPagination-ul li button:hover {
     background-color: transparent;
     border: 1px solid
-}
+} */
 
 /* button.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
     background-color: var(--app-color);

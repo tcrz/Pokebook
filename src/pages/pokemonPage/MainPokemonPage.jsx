@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import pokemonGroup from '../homepage/pokemongrp.png'
 import "./MainPokemonPage.css"
 import { InputAdornment, MenuItem, OutlinedInput, Pagination, Select } from '@mui/material'
@@ -13,27 +13,12 @@ import _ from 'lodash';
 import { AiOutlineSearch } from 'react-icons/ai';
 import DetailViewModal from '../modals/DetailModal/DetailViewModal';
 import { noiseBg } from '../../utils';
-
-const paginationStyles = {
-    '& button': {
-        background: "#E1E1E1",
-        fontFamily: "Clash display",
-        borderRadius: "8px",
-        fontWeight: "500",
-        lineHeight: "30px",
-    },
-    '& .Mui-selected': {
-        backgroundColor:  "var(--app-color)",
-        color:'white',
-       },
-    '& .Mui-selected:hover': {
-        backgroundColor:  "var(--app-color)",
-    }
-}
+import { ThemeContext } from '../../themeContext/themeContext';
 
 
 const MainPokemonPage = ({}) => {
   const navigate = useNavigate()
+  const { theme } = useContext(ThemeContext)
   const [themeModalOpen, setThemeModalOpen] = useState(false)
   const [detailsModalOpen, setDetailsModalOpen] = useState(false)
   const [limit, setLimit] = useState(8)
@@ -41,7 +26,36 @@ const MainPokemonPage = ({}) => {
   const [offset, setOffset] = useState(0)
   const [pokemonDetails, setPokemonDetails] = useState({})
   const [currentPokemon, setCurrentPokemon] = useState("")
-//   console.log(pokemonDetails)
+  console.log("theme:", theme)
+
+// Pagination styling
+const paginationStyles = {
+    '& li button': {
+        background: "#E1E1E1",
+        fontFamily: "Clash display",
+        borderRadius: "8px",
+        fontWeight: "500",
+        lineHeight: "30px",
+    },
+    '& li button:hover': {
+        backgroundColor: "transparent",
+        border: "1px solid"
+    },
+    '& li button.Mui-selected': {
+        backgroundColor: `${theme}`,
+        color:'white',
+       },
+    '& .Mui-selected:hover': {
+        backgroundColor: `${theme}`,
+    }
+}
+
+// Select menu styles
+const selectMenuStyles = {
+    // '& .MuiInputBase-root .MuiOutlinedInput-root': {
+        
+    // }
+}
 
   // Recalculate offset when pageNum or limit changes
   useEffect(()=> {
@@ -122,9 +136,9 @@ if (pokemonQueriesIsSuccess) {
     console.log(pokemonDetailsDict)
 }
 
-console.log(pokemonQueries)
-console.log(pokemonData)
-console.log(isLoading)
+// console.log(pokemonQueries)
+// console.log(pokemonData)
+// console.log(isLoading)
 
 // set pokemonDetailsDict to state
 useEffect(() => {
@@ -181,6 +195,7 @@ useEffect(() => {
                 <Pagination count={10} sx={paginationStyles} page={pageNum} color="primary" onChange={handlePageChange} />
                 <div>
                 <Select
+                sx={selectMenuStyles}
                 className="input-field"
                 value={limit}
                 onChange={handlePageSizeOnChange}
