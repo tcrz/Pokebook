@@ -58,12 +58,12 @@ const selectMenuStyles = {
 }
 
 // Number of pages for pagination component
-const totalPages = 500
-let pageCount = 0
-if (totalPages % limit === 0) {
-    pageCount = totalPages / limit
+const pokemonCount = 500
+let numOfPages = 0
+if (pokemonCount % limit === 0) {
+    numOfPages = pokemonCount / limit
   } else {
-    pageCount =  Math.floor(totalPages / limit) + 1
+    numOfPages =  Math.floor(pokemonCount / limit) + 1
   }
 
   // Recalculate offset when pageNum or limit changes
@@ -168,7 +168,7 @@ useEffect(() => {
                     <h3 className="text-xl font-semibold">Poké&nbsp;<span style={{color: "var(--app-color)"}}>book</span></h3>
                 </div>
                 <div className="borderr" style={{width: "65%"}}>
-                    <OutlinedInput className="bg-noiseBg input-field" style={{width: "100%"}} type="text" placeholder="Enter pokemon name"
+                    <OutlinedInput className="bg-noiseBg input-field hidden sm:block" style={{width: "100%"}} type="text" placeholder="Enter pokemon name"
                     startAdornment={<InputAdornment position="start"><AiOutlineSearch /></InputAdornment>} />
                 </div>
             </div>
@@ -184,7 +184,7 @@ useEffect(() => {
                 {(isLoading || !pokemonQueriesLoaded) && <Loader />}
                 {
                     !isLoading && pokemonQueriesIsSuccess && isSuccess && 
-                    <div className="pokemon-list grid grid-cols-4 gap-x-4 gap-y-4 px-20 pt-10 h-full overflow-y-scroll">
+                    <div className="pokemon-list grid grid-cols-1 gap-x-4 gap-y-4 px-20 pt-10 h-full overflow-y-scroll sm:grid-cols-2 lg:grid-cols-4">
                     {pokemonList.map(pokemon => {
                         if (pokemonDetailsDict[pokemon.name]) {
                             return (
@@ -200,8 +200,8 @@ useEffect(() => {
                     </div>
                 }
             </section>
-            <div className="pagination borderr-2 border-green-400 flex items-center justify-between" style={{height: "13vh"}}>
-                <Pagination count={pageCount} sx={paginationStyles} page={pageNum} color="primary" onChange={handlePageChange} />
+            <div className="pagination borderr-2 border-green-400 flex sm:items-center justify-between p-0 sm:px-20" style={{height: "13vh"}}>
+                <Pagination count={numOfPages} sx={paginationStyles} page={pageNum} color="primary" onChange={handlePageChange} />
                 <div>
                 <Select
                 sx={selectMenuStyles}

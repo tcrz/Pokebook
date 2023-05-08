@@ -17,7 +17,7 @@ const PokemonCard = ({name, image, types, viewPokemonDetails}) => {
                 </div>
                 <div className="borderr border-blue-900 flex flex-col gap-3 items-center" style={{height: "35%"}}>
                     <h2 className="text-xl font-medium">{name[0].toUpperCase() + name.slice(1)}</h2>
-                    <div className="borderr flex justify-around items-center gap-5" style={{minWidth: "55%"}}>
+                    <div className="borderr flex flex-wrap justify-around items-center gap-5" style={{minWidth: "55%"}}>
                         {
                             types.map((type, i) => <p key={i} className="text-sm rounded-xl bg-gray-200 px-2" style={{background: "#EEEEEE"}}>{pokemonTypes[type.type.name]}&nbsp;{type.type.name}</p>)
                         }
