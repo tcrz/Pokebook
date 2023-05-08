@@ -58,7 +58,7 @@ const selectMenuStyles = {
 }
 
 // Number of pages for pagination component
-const totalPages = 900
+const totalPages = 500
 let pageCount = 0
 if (totalPages % limit === 0) {
     pageCount = totalPages / limit
