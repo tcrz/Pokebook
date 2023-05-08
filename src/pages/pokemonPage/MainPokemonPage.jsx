@@ -168,7 +168,7 @@ useEffect(() => {
                     <h3 className="text-xl font-semibold">Poké&nbsp;<span style={{color: "var(--app-color)"}}>book</span></h3>
                 </div>
                 <div className="borderr" style={{width: "65%"}}>
-                    <OutlinedInput className="bg-noiseBg input-field hidden sm:block" style={{width: "100%"}} type="text" placeholder="Enter pokemon name"
+                    <OutlinedInput className="bg-noiseBg input-field invisible sm:visible" style={{width: "100%"}} type="text" placeholder="Enter pokemon name"
                     startAdornment={<InputAdornment position="start"><AiOutlineSearch /></InputAdornment>} />
                 </div>
             </div>
@@ -200,7 +200,7 @@ useEffect(() => {
                     </div>
                 }
             </section>
-            <div className="pagination borderr-2 border-green-400 flex sm:items-center justify-between p-0 sm:px-20" style={{height: "13vh"}}>
+            <div className="pagination borderr-2 border-green-400 flex sm:items-center justify-between p-2 sm:px-20" style={{height: "13vh"}}>
                 <Pagination count={numOfPages} sx={paginationStyles} page={pageNum} color="primary" onChange={handlePageChange} />
                 <div>
                 <Select

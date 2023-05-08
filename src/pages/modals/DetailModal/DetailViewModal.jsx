@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./DetailViewModal.css"
 import pokemonTypes from '../../pokemonPage/pokemonTypes'
 import { getDominantColor } from '../../../utils'
+import { VscArrowLeft } from "react-icons/vsc";
 
 const AboutTable = ({height, weight, abilities}) => {
   return (
@@ -61,7 +62,7 @@ const StatsTable = ({stats}) => {
 
 const DetailViewModal = ({ openModal, setModalOpen, pokemon}) => {
   console.log(pokemon)
-  const tabs = ["About", "Stats", "Similar"]
+  const tabs = ["About", "Stats"]
   const [currentTab, setCurrentTab] = useState("About")
   const [rgb, setRgb] = useState([])
   const lighterRgb = `rgb(${rgb?.map((v) => v + 30)})`
@@ -92,13 +93,13 @@ const DetailViewModal = ({ openModal, setModalOpen, pokemon}) => {
     className="modal-bg bg-noiseBg" 
     style={{display: openModal ? "flex": "none"}}
     >
-      { pokemon && <div className="details-view-modal-box p-2 absolute right-1 text-center">
+      { pokemon && <div onClick={(e)=>e.stopPropagation()} className="details-view-modal-box p-2 w-4/5 sm:w-2/5 sm:absolute sm:right-1 text-center">
         {/* pokemon image and background */}
         <div className="pokemon-img-container borderr border-black bg-reed-200 w-full relative" style={{height: "36%"}}>
-          <div className="pokemon-img-bg borderr border-black bgg-yellow-200" 
-          style={{height: "80%", background: `linear-gradient(180deg, ${lighterRgb} 0%, ${darkerRgb} 100%)`}}
-          ></div>
-          <img src={pokemon.sprites.other.dream_world.front_default} alt="pokemon-name"/>
+          <div className="pokemon-img-bg borderr border-black bgg-yellow-200 " 
+          style={{height: "80%", background: `linear-gradient(180deg, ${lighterRgb} 0%, ${darkerRgb} 100%)`}}></div>
+          <img src={pokemon.sprites.other.dream_world.front_default} alt={pokemon.name} />
+          <div onClick={handleModalClose} className="cursor-pointer rounded-md bg-white text-black absolute top-2 left-2 p-2" style={{borderRadius: "7px", boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.1)"}}><VscArrowLeft/></div>
         </div>
         {/* POKEMON INFO */}
         <div className="borderr-2 border-red-500 flex flex-col items-center px-5 gap-1" style={{height: "64%"}}>
@@ -113,7 +114,7 @@ const DetailViewModal = ({ openModal, setModalOpen, pokemon}) => {
           </div>
           {/* Details view */}
           <div className="borderr-2 border-blue-500 h-full w-full flex flex-col items-center" style={{height: "64%", marginTop: "2px"}}>
-            <div className="border-b-2 border-gray-100 p-0 w-80" style={{height: "20px", background: "linear-gradient(270deg, #FFFFFF -20%, rgba(217, 217, 217, 0.27) 45.3%, #FFFFFF 102.92%)"}}>&nbsp;</div>
+            <div className="border-b-2 border-gray-100 p-0 w-40" style={{height: "20px", background: "linear-gradient(270deg, #FFFFFF -20%, rgba(217, 217, 217, 0.27) 45.3%, #FFFFFF 102.92%)"}}>&nbsp;</div>
             <h1 className="text-xl p-0">{currentTab}</h1>
             <div className="details-container flex flex-col items-center borderr border-t-2 border-b-2 border-gray-100 w-full overfloww-y-scroll" style={{height: "80%"}}>
               {/* About view */}
@@ -130,7 +131,7 @@ const DetailViewModal = ({ openModal, setModalOpen, pokemon}) => {
             </div>
           </div>
           {/* Tabs */}
-          <div className="tabs-container borderr border-red-400 w-full flex justify-between items-center" style={{height: "15%"}}>
+          <div className="tabs-container borderr border-red-400 flex justify-between items-center w-full" style={{height: "10%"}}>
             {
               tabs.map(tab => <p onClick={(e)=>switchTab(e, tab)} className={`tab ${currentTab === tab && "active-tab"} cursor-pointer text-sm`} style={{}}>{tab}</p>)
             }

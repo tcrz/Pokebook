@@ -5,7 +5,7 @@
     /* mix-blend-mode: overlay; */
     /* border-radius: 32px; */
     /* width: 270px; */
-    width: 450px;
+    /* width: 450px; */
     height: 99%;
 }
 
@@ -44,6 +44,11 @@
 
 .details-container .details-content table {
     background: linear-gradient(270deg, #FFFFFF -20%, rgba(217, 217, 217, 0.27) 52.3%, #FFFFFF 102.92%)
+}
+
+.details-content::-webkit-scrollbar {
+    width: 5px;
+    
 }
 
 .details-container .details-content table td{
